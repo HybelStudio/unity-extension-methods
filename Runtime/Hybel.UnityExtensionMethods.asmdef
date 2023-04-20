@@ -1,7 +1,9 @@
 {
-    "name": "Hybel.ExtensionMethods",
+    "name": "Hybel.UnityExtensionMethods",
     "rootNamespace": "Hybel.ExtensionMethods",
-    "references": [],
+    "references": [
+        "GUID:3355c75d26e33ba49a6e6ee71179011d"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
