@@ -1,0 +1,10 @@
+{
+    "name": "com.hybelstudio.extension-methods",
+    "displayName": "Extension Methods",
+    "unity": "2021.3",
+    "author": {
+        "name": "Brage Ingebrigtsen",
+        "email": "hybelstudio@gmail.com",
+        "url": ""
+    }
+}
