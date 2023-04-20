@@ -122,10 +122,18 @@ namespace Hybel.ExtensionMethods
                 return;
 
             if (logWarnings)
+#if CLOGGER
                 comp.LogWarning("Extentions", $"Field with type {typeof(T)} was not set before playing. It's being assigned automatically.");
+#else
+                Debug.LogWarning($"Field with type {typeof(T)} was not set before playing. It's being assigned automatically.", comp);
+#endif
 
             if (comp.TryGetComponent(out componentReference) is false && logWarnings)
+#if CLOGGER
                 comp.LogError("Extentions", $"No component of type: {typeof(T)} was found on {comp}.");
+#else
+                Debug.LogError($"No component of type: {typeof(T)} was found on {comp}.", comp);
+#endif
         }
 
         /// <summary>
@@ -137,10 +145,18 @@ namespace Hybel.ExtensionMethods
                 return component;
 
             if (logWarnings)
+#if CLOGGER
                 comp.LogWarning("Extentions", $"Field with type {typeof(T)} was not set before playing. It's being assigned automatically.");
+#else
+                Debug.LogWarning($"Field with type {typeof(T)} was not set before playing. It's being assigned automatically.", comp);
+#endif
 
             if (comp.TryGetComponent(out component) is false && logWarnings)
-                comp.LogError("Extentions", $"No component of type: {typeof(T)} was found on {component}.");
+#if CLOGGER
+                comp.LogError("Extentions", $"No component of type: {typeof(T)} was found on {comp}.");
+#else
+                Debug.LogError($"No component of type: {typeof(T)} was found on {comp}.", comp);
+#endif
 
             return component;
         }
@@ -154,11 +170,19 @@ namespace Hybel.ExtensionMethods
                 return;
 
             if (logWarnings)
+#if CLOGGER
                 comp.LogWarning("Extentions", $"Field with type {typeof(T)} was not set before playing. It's being assigned automatically.");
+#else
+                Debug.LogWarning($"Field with type {typeof(T)} was not set before playing. It's being assigned automatically.", comp);
+#endif
 
             componentReference = comp.GetComponentInParent<T>();
             if (componentReference is null && logWarnings)
+#if CLOGGER
                 comp.LogError("Extentions", $"No component of type: {typeof(T)} was found on {comp}.");
+#else
+                Debug.LogError($"No component of type: {typeof(T)} was found on {comp}.", comp);
+#endif
         }
 
         /// <summary>
@@ -170,11 +194,19 @@ namespace Hybel.ExtensionMethods
                 return component;
 
             if (logWarnings)
+#if CLOGGER
                 comp.LogWarning("Extentions", $"Field with type {typeof(T)} was not set before playing. It's being assigned automatically.");
+#else
+                Debug.LogWarning($"Field with type {typeof(T)} was not set before playing. It's being assigned automatically.", comp);
+#endif
 
             component = comp.GetComponentInParent<T>();
             if (component is null && logWarnings)
+#if CLOGGER
                 comp.LogError("Extentions", $"No component of type: {typeof(T)} was found on {comp}.");
+#else
+                Debug.LogError($"No component of type: {typeof(T)} was found on {comp}.", comp);
+#endif
 
             return component;
         }
@@ -188,11 +220,19 @@ namespace Hybel.ExtensionMethods
                 return;
 
             if (logWarnings)
+#if CLOGGER
                 comp.LogWarning("Extentions", $"Field with type {typeof(T)} was not set before playing. It's being assigned automatically.");
+#else
+                Debug.LogWarning($"Field with type {typeof(T)} was not set before playing. It's being assigned automatically.", comp);
+#endif
 
             componentReference = comp.GetComponentInChildren<T>();
             if (componentReference is null && logWarnings)
+#if CLOGGER
                 comp.LogError("Extentions", $"No component of type: {typeof(T)} was found on {comp}.");
+#else
+                Debug.LogError($"No component of type: {typeof(T)} was found on {comp}.", comp);
+#endif
         }
 
         /// <summary>
@@ -204,11 +244,19 @@ namespace Hybel.ExtensionMethods
                 return component;
 
             if (logWarnings)
+#if CLOGGER
                 comp.LogWarning("Extentions", $"Field with type {typeof(T)} was not set before playing. It's being assigned automatically.");
+#else
+                Debug.LogWarning($"Field with type {typeof(T)} was not set before playing. It's being assigned automatically.", comp);
+#endif
 
             component = comp.GetComponentInChildren<T>();
             if (component is null && logWarnings)
+#if CLOGGER
                 comp.LogError("Extentions", $"No component of type: {typeof(T)} was found on {comp}.");
+#else
+                Debug.LogError($"No component of type: {typeof(T)} was found on {comp}.", comp);
+#endif
 
             return component;
         }
