@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Hybel.ExtensionMethods
@@ -423,19 +424,6 @@ namespace Hybel.ExtensionMethods
         }
 
         /// <summary>
-        /// Translates a group of points.
-        /// </summary>
-        public static IEnumerable<Vector2> Translate(this IEnumerable<Vector2> points, Vector2 translation)
-        {
-            List<Vector2> result = new List<Vector2>();
-
-            foreach (Vector2 point in points)
-                result.Add(point + translation);
-
-            return result;
-        }
-
-        /// <summary>
         /// Rotate a <paramref name="worldPosition"/> around a <paramref name="centerOfRotation"/>.
         /// </summary>
         /// <param name="worldPosition">Current world position.</param>
@@ -462,5 +450,38 @@ namespace Hybel.ExtensionMethods
         /// <returns><paramref name="worldPosition"/> rotated around <paramref name="centerOfRotation"/> by <paramref name="eulerAngles"/>.</returns>
         public static Vector3 Rotate(this Vector2 worldPosition, Vector2 centerOfRotation, Vector3 eulerAngles) =>
             Rotate(worldPosition, centerOfRotation, Quaternion.Euler(eulerAngles));
+
+        /// <summary>
+        /// Get the closest vector to the <paramref name="referencePoint"/>.
+        /// </summary>
+        public static Vector2 ClosestTo(this IEnumerable<Vector2> vectors, Vector2 referencePoint)
+        {
+            Vector2 closest = Vector2.positiveInfinity;
+
+            IEnumerator<Vector2> enumerator = vectors.GetEnumerator();
+
+            while (enumerator.MoveNext())
+            {
+                Vector2 current = enumerator.Current;
+
+                if (current.IsCloserThan(closest, referencePoint))
+                    closest = current;
+            }
+
+            return closest;
+        }
+
+        /// <summary>
+        /// Translates a group of points.
+        /// </summary>
+        public static IEnumerable<Vector2> Translate(this IEnumerable<Vector2> points, Vector2 translation)
+        {
+            List<Vector2> result = new List<Vector2>();
+
+            foreach (Vector2 point in points)
+                result.Add(point + translation);
+
+            return result;
+        }
     }
 }
