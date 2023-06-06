@@ -483,5 +483,17 @@ namespace Hybel.ExtensionMethods
 
             return result;
         }
+
+        /// <summary>
+        /// Converts a <see cref="Vector2"/> into a C# matrix.
+        /// </summary>
+        public static float[,] ToMatrix(this Vector2 vector)
+        {
+            return new float[,]
+            {
+                {vector.x},
+                {vector.y},
+            };
+        }
     }
 }

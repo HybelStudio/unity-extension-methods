@@ -107,5 +107,18 @@ namespace Hybel.ExtensionMethods
         /// </summary>
         public static Vector3Int Clamp(this Vector3Int vector, int? minX = null, int? minY = null, int? minZ = null, int? maxX = null, int? maxY = null, int? maxZ = null) =>
             vector.With(vector.x.Clamp(minX, maxX), vector.y.Clamp(minY, maxY), vector.z.Clamp(minZ, maxZ));
+
+        /// <summary>
+        /// Converts a <see cref="Vector3Int"/> into a C# matrix.
+        /// </summary>
+        public static int[,] ToMatrix(this Vector3Int vector)
+        {
+            return new int[,]
+            {
+                {vector.x},
+                {vector.y},
+                {vector.z},
+            };
+        }
     }
 }

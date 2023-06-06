@@ -454,5 +454,18 @@ namespace Hybel.ExtensionMethods
         /// <returns><paramref name="worldPosition"/> rotated around <paramref name="centerOfRotation"/> by <paramref name="eulerAngles"/>.</returns>
         public static Vector3 Rotate(this Vector3 worldPosition, Vector3 centerOfRotation, Vector3 eulerAngles) =>
             Rotate(worldPosition, centerOfRotation, Quaternion.Euler(eulerAngles));
+
+        /// <summary>
+        /// Converts a <see cref="Vector3"/> into a C# matrix.
+        /// </summary>
+        public static float[,] ToMatrix(this Vector3 vector)
+        {
+            return new float[,]
+            {
+                {vector.x},
+                {vector.y},
+                {vector.z},
+            };
+        }
     }
 }

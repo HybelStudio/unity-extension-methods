@@ -105,5 +105,17 @@ namespace Hybel.ExtensionMethods
         /// </summary>
         public static Vector2Int Clamp(this Vector2Int vector, Vector2Int? min = null, Vector2Int? max = null) =>
             vector.Clamp(min?.x, min?.y, max?.x, max?.y);
+
+        /// <summary>
+        /// Converts a <see cref="Vector2Int"/> into a C# matrix.
+        /// </summary>
+        public static int[,] ToMatrix(this Vector2Int vector)
+        {
+            return new int[,]
+            {
+                {vector.x},
+                {vector.y},
+            };
+        }
     }
 }
