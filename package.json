@@ -1,7 +1,7 @@
 {
     "name": "com.hybelstudio.unity-extension-methods",
     "displayName": "Unity Extension Methods",
-    "description": "A growing collection of extentsion methods for use inside Unity.",
+    "description": "A growing collection of extension methods for use inside Unity.",
     "version": "1.0.0",
     "unity": "2021.3",
     "dependencies": {
