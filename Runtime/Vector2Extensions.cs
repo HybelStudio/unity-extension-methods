@@ -43,13 +43,13 @@ namespace Hybel.ExtensionMethods
         /// <param name="x">Value to subtract from x. (Optional)</param>
         /// <param name="y">Value to subtract from y. (Optional)</param>
         /// <returns>Vector2 with subtracted values.</returns>
-        public static Vector2 Subtract(this Vector2 vector, float? x = null, float? y = null) =>
+        public static Vector2 Sub(this Vector2 vector, float? x = null, float? y = null) =>
             new Vector2(vector.x - x ?? vector.x, vector.y - y ?? vector.y);
 
         /// <summary>
         /// Subtract any value from x and/or y.
         /// </summary>
-        public static Vector2 Subtract(this Vector2 vector, Vector2 subtractedVector) =>
+        public static Vector2 Sub(this Vector2 vector, Vector2 subtractedVector) =>
             vector - subtractedVector;
 
         /// <summary>
@@ -59,7 +59,7 @@ namespace Hybel.ExtensionMethods
         /// <param name="x">Value to multiply with x. (Optional)</param>
         /// <param name="y">Value to multiply with y. (Optional)</param>
         /// <returns>Vector2 with multiplied values.</returns>
-        public static Vector2 Multiply(this Vector2 vector, float? x = null, float? y = null) =>
+        public static Vector2 Mul(this Vector2 vector, float? x = null, float? y = null) =>
             new Vector2(vector.x * x ?? vector.x, vector.y * y ?? vector.y);
 
         /// <summary>
@@ -69,9 +69,19 @@ namespace Hybel.ExtensionMethods
         /// <param name="x">Value to divide with x. (Optional)</param>
         /// <param name="y">Value to divide with y. (Optional)</param>
         /// <returns>Vector2 with divided values.</returns>
-        public static Vector2 Divide(this Vector2 vector, float? x = null, float? y = null) =>
+        public static Vector2 Div(this Vector2 vector, float? x = null, float? y = null) =>
             new Vector2(vector.x / x ?? vector.x, vector.y / y ?? vector.y);
-
+        
+        /// <summary>
+        /// Modulus any value with x and/or y.
+        /// </summary>
+        /// <param name="vector">Vector</param>
+        /// <param name="x">Value to modulus with x. (Optional)</param>
+        /// <param name="y">Value to modulus with y. (Optional)</param>
+        /// <returns>Vector2 with modulused values.</returns>
+        public static Vector2 Mod(this Vector2 vector, float? x = null, float? y = null) =>
+            new Vector2(vector.x % x ?? vector.x, vector.y % y ?? vector.y);
+        
         /// <summary>
         /// Flatten the vector to a given value on the y axis.
         /// </summary>

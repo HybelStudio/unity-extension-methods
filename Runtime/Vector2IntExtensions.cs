@@ -31,7 +31,7 @@ namespace Hybel.ExtensionMethods
         /// <param name="x">Value to subtract from x. (Optional)</param>
         /// <param name="y">Value to subtract from y. (Optional)</param>
         /// <returns>Vector2Int with subtracted values.</returns>
-        public static Vector2Int Subtract(this Vector2Int vector, int? x = null, int? y = null) =>
+        public static Vector2Int Sub(this Vector2Int vector, int? x = null, int? y = null) =>
             new Vector2Int(vector.x - x ?? vector.x, vector.y - y ?? vector.y);
 
         /// <summary>
@@ -40,17 +40,26 @@ namespace Hybel.ExtensionMethods
         /// <param name="x">Value to subtract from x. (Optional)</param>
         /// <param name="y">Value to subtract from y. (Optional)</param>
         /// <returns>Vector2Int with subtracted values.</returns>
-        public static Vector2Int Multiply(this Vector2Int vector, int? x = null, int? y = null) =>
+        public static Vector2Int Mul(this Vector2Int vector, int? x = null, int? y = null) =>
             new Vector2Int(vector.x * x ?? vector.x, vector.y * y ?? vector.y);
 
         /// <summary>
-        /// Devide any value with x and/or y.
+        /// Divide any value with x and/or y.
         /// </summary>
-        /// <param name="x">Value to devide with x. (Optional)</param>
-        /// <param name="y">Value to devide with y. (Optional)</param>
-        /// <returns>Vector2Int with devided values.</returns>
-        public static Vector2Int Divide(this Vector2Int vector, int? x = null, int? y = null) =>
+        /// <param name="x">Value to divide with x. (Optional)</param>
+        /// <param name="y">Value to divide with y. (Optional)</param>
+        /// <returns>Vector2Int with divided values.</returns>
+        public static Vector2Int Div(this Vector2Int vector, int? x = null, int? y = null) =>
             new Vector2Int(vector.x / x ?? vector.x, vector.y / y ?? vector.y);
+
+        /// <summary>
+        /// Modulus any value with x and/or y.
+        /// </summary>
+        /// <param name="x">Value to modulus with x. (Optional)</param>
+        /// <param name="y">Value to modulus with y. (Optional)</param>
+        /// <returns>Vector2Int with modulused values.</returns>
+        public static Vector2Int Mod(this Vector2Int vector, int? x = null, int? y = null) =>
+            new Vector2Int(vector.x % x ?? vector.x, vector.y % y ?? vector.y);
 
         /// <summary>
         /// Convert from Vector2Int to Vector2.

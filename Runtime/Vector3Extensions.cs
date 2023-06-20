@@ -33,7 +33,7 @@ namespace Hybel.ExtensionMethods
         /// <param name="y">Value to subtract from y. (Optional)</param>
         /// <param name="z">Value to subtract from z. (Optional)</param>
         /// <returns>Vector2 with subtracted values.</returns>
-        public static Vector3 Subtract(this Vector3 vector, float? x = null, float? y = null, float? z = null) =>
+        public static Vector3 Sub(this Vector3 vector, float? x = null, float? y = null, float? z = null) =>
             new Vector3(vector.x - x ?? vector.x, vector.y - y ?? vector.y, vector.z - z ?? vector.z);
 
         /// <summary>
@@ -44,18 +44,18 @@ namespace Hybel.ExtensionMethods
         /// <param name="y">Value to subtract from y. (Optional)</param>
         /// <param name="z">Value to subtract from z. (Optional)</param>
         /// <returns>Vector2 with subtracted values.</returns>
-        public static Vector3 Multiply(this Vector3 vector, float? x = null, float? y = null, float? z = null) =>
+        public static Vector3 Mul(this Vector3 vector, float? x = null, float? y = null, float? z = null) =>
             new Vector3(vector.x * x ?? vector.x, vector.y * y ?? vector.y, vector.z * z ?? vector.z);
 
         /// <summary>
-        /// Devide any value with x, y and/or z.
+        /// Divide any value with x, y and/or z.
         /// </summary>
         /// <param name="vector">Vector</param>
-        /// <param name="x">Value to devide with x. (Optional)</param>
-        /// <param name="y">Value to devide with y. (Optional)</param>
-        /// <param name="z">Value to devide with z. (Optional)</param>
-        /// <returns>Vector2 with devided values.</returns>
-        public static Vector3 Divide(this Vector3 vector, float? x = null, float? y = null, float? z = null) =>
+        /// <param name="x">Value to divide with x. (Optional)</param>
+        /// <param name="y">Value to divide with y. (Optional)</param>
+        /// <param name="z">Value to divide with z. (Optional)</param>
+        /// <returns>Vector2 with divided values.</returns>
+        public static Vector3 Div(this Vector3 vector, float? x = null, float? y = null, float? z = null) =>
             new Vector3(vector.x / x ?? vector.x, vector.y / y ?? vector.y, vector.z / z ?? vector.z);
 
         /// <summary>
@@ -258,25 +258,25 @@ namespace Hybel.ExtensionMethods
         /// <param name="vector1">This Vector3</param>
         /// <param name="vector2">Given Vector3.</param>
         /// <returns>Cross Product between two Vector2.</returns>
-        public static Vector3 Cross(this Vector3 vector1, Vector2 vector2) =>
+        public static Vector3 Cross(this Vector3 vector1, Vector3 vector2) =>
             Vector3.Cross(vector1, vector2);
 
         /// <summary>
-        /// Returns a Vector2 Perpendiciular to the input.
+        /// Returns a Vector2 Perpendicular to the input.
         /// </summary>
         /// <param name="vector">Vector3.</param>
         public static Vector3 PerpXY(this Vector3 vector) =>
             new Vector3(vector.y, -vector.x, 0f);
 
         /// <summary>
-        /// Returns a Vector2 Perpendiciular to the input.
+        /// Returns a Vector2 Perpendicular to the input.
         /// </summary>
         /// <param name="vector">Vector3.</param>
         public static Vector3 PerpXZ(this Vector3 vector) =>
             new Vector3(vector.y, 0f, -vector.x);
 
         /// <summary>
-        /// Returns a Vector2 Perpendiciular to the input.
+        /// Returns a Vector2 Perpendicular to the input.
         /// </summary>
         /// <param name="vector">Vector3.</param>
         public static Vector3 PerpYZ(this Vector3 vector) =>

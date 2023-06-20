@@ -35,7 +35,7 @@ namespace Hybel.ExtensionMethods
         /// <param name="y">Value to subtract from y. (Optional)</param>
         /// <param name="z">Value to subtract from z. (Optional)</param>
         /// <returns>Vector2 with subtracted values.</returns>
-        public static Vector3Int Subtract(this Vector3Int vector, int? x = null, int? y = null, int? z = null) =>
+        public static Vector3Int Sub(this Vector3Int vector, int? x = null, int? y = null, int? z = null) =>
             new Vector3Int(vector.x - x ?? vector.x, vector.y - y ?? vector.y, vector.z - z ?? vector.z);
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace Hybel.ExtensionMethods
         /// <param name="y">Value to subtract from y. (Optional)</param>
         /// <param name="z">Value to subtract from z. (Optional)</param>
         /// <returns>Vector3Int with subtracted values.</returns>
-        public static Vector3Int Multiply(this Vector3Int vector, int? x = null, int? y = null, int? z = null) =>
+        public static Vector3Int Mul(this Vector3Int vector, int? x = null, int? y = null, int? z = null) =>
             new Vector3Int(vector.x * x ?? vector.x, vector.y * y ?? vector.y, vector.z * z ?? vector.z);
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace Hybel.ExtensionMethods
         /// <param name="y">Value to devide with y. (Optional)</param>
         /// <param name="z">Value to devide with z. (Optional)</param>
         /// <returns>Vector3Int with devided values.</returns>
-        public static Vector3Int Divide(this Vector3Int vector, int? x = null, int? y = null, int? z = null) =>
+        public static Vector3Int Div(this Vector3Int vector, int? x = null, int? y = null, int? z = null) =>
             new Vector3Int(vector.x / x ?? vector.x, vector.y / y ?? vector.y, vector.z / z ?? vector.z);
 
         /// <summary>
